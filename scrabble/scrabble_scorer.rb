@@ -31,5 +31,16 @@ char_scores = {
   'z'=> 10,
 }
 
-Hash[ARGF.each_line.map{|w| w.downcase.strip}.map{ |w| [w.chars.map{ |c| char_scores[c]}.reduce(:+), w]}].sort_by{|k,v| k}.each{ |k,v| puts "#{k} -> #{v}" }
+Hash[
+  ARGF
+  .each_line
+  .map{ |w| w.downcase.strip }
+  .map{ |w| 
+    [w.chars
+      .map{ |c| char_scores[c] }
+      .reduce(:+), w
+    ]
+  }
+].sort_by{|k,v| k}
+.each{ |k,v| puts "#{k} -> #{v}" }
 
