@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# Calculate scabble scores for all words in given file (one word per line) and sort ascending
+
 char_scores = {
   'a' => 1,
   'b'=> 3,
